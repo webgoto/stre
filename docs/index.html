@@ -1,0 +1,945 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<title>STRE CSS FRAMEWORK</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="normalize.min.css"/>
+<style type="text/css">
+/*########################################
+         Reset CSS
+########################################*/
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	font-size: 100%;
+	font-weight: inherit;
+}
+form{
+	margin-bottom: 0;
+}
+p, dl ,pre, blockquote, figure {
+	margin: 0;
+}
+ul, ol, menu {
+	margin: 0;
+	padding-left: 0;
+}
+li{
+	list-style: none;
+}
+dd{
+	margin-left: 0;
+}
+th {
+	font-weight: inherit;
+	text-align: left;
+}
+a {
+	color: inherit;
+	text-decoration: inherit;
+}
+s, del, u, ins {
+	text-decoration: inherit;
+}
+i, cite, em, var, address, dfn {
+	font-style: inherit;
+}
+q:before, q:after {
+	content: none;
+}
+</style>
+<link rel="stylesheet" href="../st.css"/>
+<link rel="stylesheet" href="../re.css"/>
+<style>
+/*########################################
+         HELPER
+########################################*/
+.clearfix:after{content:" ";display:block;clear:both;}
+.hide{display:none;}
+.opacity:hover{opacity:0.7;}
+
+.fleft{float:left;}
+.fcenter{margin-left:auto;margin-right:auto;}
+.fright{float:right;}
+
+.tleft{text-align:left;}
+.tcenter{text-align:center;}
+.tright{text-align:right;}
+
+.bgcover{background-size:cover;background-position:center;background-repeat:no-repeat;}
+.bgcontain{background-size:contain;background-position:center;background-repeat:no-repeat;}
+
+.dinline{display:inline;}
+.dinlineblock{display:inline-block;}
+.dblock{display:block;}
+
+.dtable{display:table;width:100%;}
+.dtable>*{display:table-cell;}
+.dtable>*.top{vertical-align:top;}
+.dtable>*.middle{vertical-align:middle;}
+.dtable>*.bottom{vertical-align:bottom;}
+
+.dflex{display:flex;flex-wrap:wrap;align-items:flex-start;align-content:flex-start;}
+.dflex>*{flex:1;}
+.dflex>*.top{align-self:start;}
+.dflex>*.middle{align-self:center;}
+.dflex>*.bottom{align-self:end;}
+
+/*########################################
+         CUSTOM-THEME
+########################################*/
+
+html {
+	overflow-y: scroll;
+}
+
+body {
+	font-size: 13px;
+	font-family: 'メイリオ','Meiryo','ヒラギノ角ゴ ProN W3','Hiragino Kaku Gothic ProN','MS Pゴシック','MS PGothic','sans-serif';
+	/*font-family: monospace;*/
+	line-height: 1.5;
+	overflow-x: hidden;
+}
+
+.grids{
+	border: 1px solid #bbb;
+	/*border-radius: 2px;*/
+	background: rgba(170, 170, 170, 0.1);
+	overflow: hidden;
+}
+</style>
+</head>
+<body style="background-repeat: repeat-y;">
+<!-- background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAABCAYAAAAmaMpmAAAAJ0lEQVRIie3SQQ0AIAzAwPo3PVQsBHKnoI82AMDTqtsJfMhXbKjmAJcdaz6ONPF5AAAAAElFTkSuQmCC'); -->
+
+<!-- header -->
+<div class="grids">
+	<div class="re_container">
+		<div class="re_row_3">
+			<div class="re_col_sm_12 re_pv_6">
+				<h1 class="re_fs_5 tcenter">CSS FRAMEWORK</h1>
+				<h1 class="re_fs_8 tcenter">- STRE -</h1>
+				<h1 class="re_fs_3 tcenter"><span style="text-decoration: underline;">ST</span>yle & <span style="text-decoration: underline;">RE</span>sponsive</h1>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Grid -->
+<div class="re_container re_mt_7">
+
+	<div class="re_row_3">
+		<div class="re_col_sm_12">
+			<h2 class="re_fs_5 tcenter">Grid<br>-</h2>
+		</div>
+	</div>
+
+	<div class="re_row_3">
+		<div class="re_col_sm_1 re_mb_5">
+		<p class="grids tcenter re_pv_1">1</p>
+		</div>
+		<div class="re_col_sm_1 re_mb_2">
+		<p class="grids tcenter re_pv_1">1</p>
+		</div>
+		<div class="re_col_sm_1 re_mb_2">
+		<p class="grids tcenter re_pv_1">1</p>
+		</div>
+		<div class="re_col_sm_1 re_mb_2">
+		<p class="grids tcenter re_pv_1">1</p>
+		</div>
+		<div class="re_col_sm_1 re_mb_2">
+		<p class="grids tcenter re_pv_1">1</p>
+		</div>
+		<div class="re_col_sm_1 re_mb_2">
+		<p class="grids tcenter re_pv_1">1</p>
+		</div>
+		<div class="re_col_sm_1 re_mb_2">
+		<p class="grids tcenter re_pv_1">1</p>
+		</div>
+		<div class="re_col_sm_1 re_mb_2">
+		<p class="grids tcenter re_pv_1">1</p>
+		</div>
+		<div class="re_col_sm_1 re_mb_2">
+		<p class="grids tcenter re_pv_1">1</p>
+		</div>
+		<div class="re_col_sm_1 re_mb_2">
+		<p class="grids tcenter re_pv_1">1</p>
+		</div>
+		<div class="re_col_sm_1 re_mb_2">
+		<p class="grids tcenter re_pv_1">1</p>
+		</div>
+		<div class="re_col_sm_1 re_mb_2">
+		<p class="grids tcenter re_pv_1">1</p>
+		</div>
+
+		<div class="re_col_sm_2 re_mb_2">
+		<p class="grids tcenter re_pv_1">2</p>
+		</div>
+		<div class="re_col_sm_2 re_mb_2">
+		<p class="grids tcenter re_pv_1">2</p>
+		</div>
+		<div class="re_col_sm_2 re_mb_2">
+		<p class="grids tcenter re_pv_1">2</p>
+		</div>
+		<div class="re_col_sm_2 re_mb_2">
+		<p class="grids tcenter re_pv_1">2</p>
+		</div>
+		<div class="re_col_sm_2 re_mb_2">
+		<p class="grids tcenter re_pv_1">2</p>
+		</div>
+		<div class="re_col_sm_2 re_mb_2">
+		<p class="grids tcenter re_pv_1">2</p>
+		</div>
+
+		<div class="re_col_sm_24 re_mb_2">
+		<p class="grids tcenter re_pv_1">2.4</p>
+		</div>
+		<div class="re_col_sm_24 re_mb_2">
+		<p class="grids tcenter re_pv_1">2.4</p>
+		</div>
+		<div class="re_col_sm_24 re_mb_2">
+		<p class="grids tcenter re_pv_1">2.4</p>
+		</div>
+		<div class="re_col_sm_24 re_mb_2">
+		<p class="grids tcenter re_pv_1">2.4</p>
+		</div>
+		<div class="re_col_sm_24 re_mb_2">
+		<p class="grids tcenter re_pv_1">2.4</p>
+		</div>
+
+		<div class="re_col_sm_3 re_mb_2">
+		<p class="grids tcenter re_pv_1">3</p>
+		</div>
+		<div class="re_col_sm_3 re_mb_2">
+		<p class="grids tcenter re_pv_1">3</p>
+		</div>
+		<div class="re_col_sm_3 re_mb_2">
+		<p class="grids tcenter re_pv_1">3</p>
+		</div>
+		<div class="re_col_sm_3 re_mb_2">
+		<p class="grids tcenter re_pv_1">3</p>
+		</div>
+
+		<div class="re_col_sm_4 re_mb_2">
+		<p class="grids tcenter re_pv_1">4</p>
+		</div>
+		<div class="re_col_sm_4 re_mb_2">
+		<p class="grids tcenter re_pv_1">4</p>
+		</div>
+		<div class="re_col_sm_4 re_mb_2">
+		<p class="grids tcenter re_pv_1">4</p>
+		</div>
+
+		<div class="re_col_sm_5 re_mb_2">
+		<p class="grids tcenter re_pv_1">5</p>
+		</div>
+		<div class="re_col_sm_5 re_mb_2">
+		<p class="grids tcenter re_pv_1">5</p>
+		</div>
+		<div class="re_col_sm_2 re_mb_2">
+		<p class="grids tcenter re_pv_1">2</p>
+		</div>
+
+		<div class="re_col_sm_6 re_mb_2">
+		<p class="grids tcenter re_pv_1">6</p>
+		</div>
+		<div class="re_col_sm_6 re_mb_2">
+		<p class="grids tcenter re_pv_1">6</p>
+		</div>
+
+		<div class="re_col_sm_7 re_mb_2">
+			<p class="grids tcenter re_pv_1">7</p>
+		</div>
+		<div class="re_col_sm_5 re_mb_2">
+			<p class="grids tcenter re_pv_1">5</p>
+		</div>
+
+		<div class="re_col_sm_8 re_mb_2">
+			<p class="grids tcenter re_pv_1">8</p>
+		</div>
+		<div class="re_col_sm_4 re_mb_2">
+			<p class="grids tcenter re_pv_1">4</p>
+		</div>
+
+		<div class="re_col_sm_9 re_mb_2">
+			<p class="grids tcenter re_pv_1">9</p>
+		</div>
+		<div class="re_col_sm_3 re_mb_2">
+			<p class="grids tcenter re_pv_1">3</p>
+		</div>
+
+		<div class="re_col_sm_10 re_mb_2">
+			<p class="grids tcenter re_pv_1">10</p>
+		</div>
+		<div class="re_col_sm_2 re_mb_2">
+			<p class="grids tcenter re_pv_1">2</p>
+		</div>
+
+		<div class="re_col_sm_11 re_mb_2">
+			<p class="grids tcenter re_pv_1">11</p>
+		</div>
+		<div class="re_col_sm_1 re_mb_2">
+			<p class="grids tcenter re_pv_1">1</p>
+		</div>
+
+		<div class="re_col_sm_12 re_mb_2">
+			<p class="grids tcenter re_pv_1">12</p>
+		</div>
+
+	</div>
+
+	<div class="re_row_0">
+		<div class="re_col_sm_4 re_mb_2">
+		<p class="grids tcenter re_pv_1">re_row_0</p>
+		</div>
+		<div class="re_col_sm_4 re_mb_2">
+		<p class="grids tcenter re_pv_1">re_row_0</p>
+		</div>
+		<div class="re_col_sm_4 re_mb_2">
+		<p class="grids tcenter re_pv_1">re_row_0</p>
+		</div>
+	</div>
+
+	<div class="re_row_5">
+		<div class="re_col_sm_4 re_mb_2">
+		<p class="grids tcenter re_pv_1">re_row_5</p>
+		</div>
+		<div class="re_col_sm_4 re_mb_2">
+		<p class="grids tcenter re_pv_1">re_row_5</p>
+		</div>
+		<div class="re_col_sm_4 re_mb_2">
+		<p class="grids tcenter re_pv_1">re_row_5</p>
+		</div>
+	</div>
+
+	<div class="re_row_9">
+		<div class="re_col_sm_4 re_mb_2">
+			<p class="grids tcenter re_pv_1">re_row_9</p>
+		</div>
+		<div class="re_col_sm_4 re_mb_2">
+			<p class="grids tcenter re_pv_1">re_row_9</p>
+		</div>
+		<div class="re_col_sm_4 re_mb_2">
+			<p class="grids tcenter re_pv_1">re_row_9</p>
+		</div>
+	</div>
+
+	<div class="re_row_3 re_mt_4">
+		<div class="re_col_sm_12">
+			<h3 class="re_fs_3 tcenter">Class Name</h3>
+		</div>
+	</div>
+
+	<div class="re_row_3">
+		<div class="re_col_sm_6 re_col_lg_4 re_mt_1">
+			<div class="grids re_p_2">
+				.re_container<br>
+			</div>
+		</div>
+		<div class="re_col_sm_6 re_col_lg_4 re_mt_1">
+			<div class="grids re_p_2">
+				.re_row_0<br>
+				.re_row_1<br>
+				.re_row_2<br>
+				.re_row_3<br>
+				.re_row_4<br>
+				.re_row_5<br>
+				.re_row_6<br>
+				.re_row_7<br>
+				.re_row_8<br>
+				.re_row_9<br>
+			</div>
+		</div>
+		<div class="re_col_sm_6 re_col_lg_4 re_mt_1">
+			<div class="grids re_p_2">
+				.re_col_{sm,lg}_1<br>
+				.re_col_{sm,lg}_2<br>
+				.re_col_{sm,lg}_24<br>
+				.re_col_{sm,lg}_3<br>
+				.re_col_{sm,lg}_4<br>
+				.re_col_{sm,lg}_5<br>
+				.re_col_{sm,lg}_6<br>
+				.re_col_{sm,lg}_7<br>
+				.re_col_{sm,lg}_8<br>
+				.re_col_{sm,lg}_9<br>
+				.re_col_{sm,lg}_10<br>
+				.re_col_{sm,lg}_11<br>
+				.re_col_{sm,lg}_12<br>
+			</div>
+		</div>
+	</div>
+
+
+<!-- グリッド -->
+<div class="re_container re_mt_7">
+
+	<div class="re_row_3">
+		<div class="re_col_sm_12">
+			<h2 class="re_fs_5 tcenter">Grid（order）<br>-</h2>
+		</div>
+	</div>
+
+	<div class="re_row_3">
+		<div class="re_col_sm_2 re_mb_2">
+		<p class="grids tcenter re_pv_1">1</p>
+		</div>
+		<div class="re_col_sm_2 re_mb_2">
+		<p class="grids tcenter re_pv_1">2</p>
+		</div>
+		<div class="re_col_sm_2 re_mb_2 re_col_last_lg">
+		<p class="grids tcenter re_pv_1">3<br>.re_col_last_lg</p>
+		</div>
+		<div class="re_col_sm_2 re_mb_2">
+		<p class="grids tcenter re_pv_1">4</p>
+		</div>
+		<div class="re_col_sm_2 re_mb_2">
+		<p class="grids tcenter re_pv_1">5</p>
+		</div>
+		<div class="re_col_sm_2 re_mb_2 re_col_first_lg">
+		<p class="grids tcenter re_pv_1">6<br>.re_col_first_lg</p>
+		</div>
+	</div>
+
+</div>
+
+
+<!-- フォントサイズ -->
+<div class="re_container re_mt_7">
+
+	<div class="re_row_3">
+		<div class="re_col_sm_12">
+			<h2 class="re_fs_5 tcenter">Font Size<br>-</h2>
+		</div>
+	</div>
+
+	<div class="re_row_3 tcenter">
+		<div class="re_col_sm_12"><p class="re_fs_1">.re_fs_1</p></div>
+		<div class="re_col_sm_12"><p class="re_fs_2">.re_fs_2</p></div>
+		<div class="re_col_sm_12"><p class="re_fs_3">.re_fs_3</p></div>
+		<div class="re_col_sm_12"><p class="re_fs_4">.re_fs_4</p></div>
+		<div class="re_col_sm_12"><p class="re_fs_5">.re_fs_5</p></div>
+		<div class="re_col_sm_12"><p class="re_fs_6">.re_fs_6</p></div>
+		<div class="re_col_sm_12"><p class="re_fs_7">.re_fs_7</p></div>
+		<div class="re_col_sm_12"><p class="re_fs_8">.re_fs_8</p></div>
+		<div class="re_col_sm_12"><p class="re_fs_9">.re_fs_9</p></div>
+	</div>
+
+</div>
+
+
+<!-- マージン -->
+<div class="re_container re_mt_7">
+
+	<div class="re_row_3">
+		<div class="re_col_sm_12">
+			<h2 class="re_fs_5 tcenter">Margin<br>-</h2>
+		</div>
+	</div>
+
+	<div class="re_max_sm_4">
+		<div class="re_row_3">
+			<div class="re_col_sm_6 re_col_lg_2 tcenter"><p>.re_pb_1</p><img class="grids re_mb_2 re_pb_1" src="https://dummyimage.com/100x100/aaa/fff.gif" alt=""></div>
+			<div class="re_col_sm_6 re_col_lg_2 tcenter"><p>.re_pb_2</p><img class="grids re_mb_2 re_pb_2" src="https://dummyimage.com/100x100/aaa/fff.gif" alt=""></div>
+			<div class="re_col_sm_6 re_col_lg_2 tcenter"><p>.re_pb_3</p><img class="grids re_mb_2 re_pb_3" src="https://dummyimage.com/100x100/aaa/fff.gif" alt=""></div>
+			<div class="re_col_sm_6 re_col_lg_2 tcenter"><p>.re_pb_4</p><img class="grids re_mb_2 re_pb_4" src="https://dummyimage.com/100x100/aaa/fff.gif" alt=""></div>
+			<div class="re_col_sm_6 re_col_lg_2 tcenter"><p>.re_pb_5</p><img class="grids re_mb_2 re_pb_5" src="https://dummyimage.com/100x100/aaa/fff.gif" alt=""></div>
+			<div class="re_col_sm_6 re_col_lg_2 tcenter"><p>.re_pb_6</p><img class="grids re_mb_2 re_pb_6" src="https://dummyimage.com/100x100/aaa/fff.gif" alt=""></div>
+			<div class="re_col_sm_6 re_col_lg_2 tcenter"><p>.re_pb_7</p><img class="grids re_mb_2 re_pb_7" src="https://dummyimage.com/100x100/aaa/fff.gif" alt=""></div>
+			<div class="re_col_sm_6 re_col_lg_2 tcenter"><p>.re_pb_8</p><img class="grids re_mb_2 re_pb_8" src="https://dummyimage.com/100x100/aaa/fff.gif" alt=""></div>
+			<div class="re_col_sm_6 re_col_lg_2 tcenter"><p>.re_pb_9</p><img class="grids re_mb_2 re_pb_9" src="https://dummyimage.com/100x100/aaa/fff.gif" alt=""></div>
+		</div>
+
+
+		<div class="re_row_3">
+			<div class="re_col_sm_6 re_col_lg_2 tcenter"><img class="grids re_mt_1"  src="https://dummyimage.com/100x100/aaa/fff.gif" alt=""><p>.re_mt_1</p></div>
+			<div class="re_col_sm_6 re_col_lg_2 tcenter"><img class="grids re_mt_5"  src="https://dummyimage.com/100x100/aaa/fff.gif" alt=""><p>.re_mt_5</p></div>
+			<div class="re_col_sm_6 re_col_lg_2 tcenter"><img class="grids re_mt_9"  src="https://dummyimage.com/100x100/aaa/fff.gif" alt=""><p>.re_mt_9</p></div>
+			<div class="re_col_sm_6 re_col_lg_2 tcenter"><img class="grids re_mt_-1" src="https://dummyimage.com/100x100/aaa/fff.gif" alt=""><p>.re_mt_-1</p></div>
+			<div class="re_col_sm_6 re_col_lg_2 tcenter"><img class="grids re_mt_-5" src="https://dummyimage.com/100x100/aaa/fff.gif" alt=""><p>.re_mt_-5</p></div>
+			<div class="re_col_sm_6 re_col_lg_2 tcenter"><img class="grids re_mt_-9" src="https://dummyimage.com/100x100/aaa/fff.gif" alt=""><p>.re_mt_-9</p></div>
+		</div>
+	</div>
+
+	<div class="re_row_3 re_mt_4">
+		<div class="re_col_sm_12">
+			<h3 class="re_fs_3 tcenter">Class Name</h3>
+		</div>
+	</div>
+
+	<div class="re_row_3">
+		<div class="re_col_sm_6 re_col_lg_4 re_mt_1">
+			<div class="grids re_p_2">
+				.re_m_{1-9}<br>
+				.re_mv_{1-9}<br>
+				.re_mh_{1-9}<br>
+				.re_mt_{1-9}<br>
+				.re_mr_{1-9}<br>
+				.re_ml_{1-9}<br>
+				.re_mb_{1-9}<br>
+			</div>
+		</div>
+		<div class="re_col_sm_6 re_col_lg_4 re_mt_1">
+			<div class="grids re_p_2">
+				.re_m_-{1-9}<br>
+				.re_mv_-{1-9}<br>
+				.re_mh_-{1-9}<br>
+				.re_mt_-{1-9}<br>
+				.re_mr_-{1-9}<br>
+				.re_ml_-{1-9}<br>
+				.re_mb_-{1-9}<br>
+			</div>
+		</div>
+		<div class="re_col_sm_6 re_col_lg_4 re_mt_1">
+			<div class="grids re_p_2">
+				.re_p_{1-9}<br>
+				.re_pv_{1-9}<br>
+				.re_ph_{1-9}<br>
+				.re_pt_{1-9}<br>
+				.re_pr_{1-9}<br>
+				.re_pl_{1-9}<br>
+				.re_pb_{1-9}<br>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+
+<!-- マックス -->
+<div class="re_container re_mt_7">
+
+	<div class="re_row_3">
+		<div class="re_col_sm_12">
+			<h2 class="re_fs_5 tcenter">Max<br>-</h2>
+		</div>
+	</div>
+
+	<div class="re_row_3">
+		<div class="re_col_sm_12">
+			<div class="grids">
+				<div class="re_pt_2" style="text-align: center;">
+					<div class="re_max_sm_1 re_max_lg_1 re_mb_2"><p class="grids re_pv_2">re_max_{sm,lg}_1</p></div>
+					<div class="re_max_sm_2 re_max_lg_2 re_mb_2"><p class="grids re_pv_2">re_max_{sm,lg}_2</p></div>
+					<div class="re_max_sm_3 re_max_lg_3 re_mb_2"><p class="grids re_pv_2">re_max_{sm,lg}_3</p></div>
+					<div class="re_max_sm_4 re_max_lg_4 re_mb_2"><p class="grids re_pv_2">re_max_{sm,lg}_4</p></div>
+					<div class="re_max_sm_5 re_max_lg_5 re_mb_2"><p class="grids re_pv_2">re_max_{sm,lg}_5</p></div>
+					<div class="re_max_sm_6 re_max_lg_6 re_mb_2"><p class="grids re_pv_2">re_max_{sm,lg}_6</p></div>
+					<div class="re_max_sm_7 re_max_lg_7 re_mb_2"><p class="grids re_pv_2">re_max_{sm,lg}_7</p></div>
+					<div class="re_max_sm_8 re_max_lg_8 re_mb_2"><p class="grids re_pv_2">re_max_{sm,lg}_8</p></div>
+					<div class="re_max_sm_9 re_max_lg_9 re_mb_2"><p class="grids re_pv_2">re_max_{sm,lg}_9</p></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+
+
+<!-- ヘルパー -->
+<div class="re_container re_mt_7">
+
+	<div class="re_row_3">
+		<div class="re_col_sm_12">
+			<h2 class="re_fs_5 tcenter">Helper<br>-</h2>
+		</div>
+	</div>
+
+	<div class="re_row_3">
+		<div class="re_col_sm_12 re_mt_1">
+			<div class="grids re_p_2">
+				.re_unfluid_{sm,lg}<br>
+				.re_hide_{sm,lg}<br>
+				.re_tleft_{sm,lg}<br>
+				.re_tcenter_{sm,lg}<br>
+				.re_tright_{sm,lg}<br>
+				.re_full_{sm,lg}<br>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+</div>
+
+<!-- header -->
+<div class="grids re_mt_8">
+	<div class="re_container">
+		<div class="re_row_3">
+			<div class="re_col_sm_12 re_pv_7">
+				<h1 class="re_fs_6 tcenter">STyle & REsponsive</h1>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Button -->
+<div class="re_container re_mt_7">
+
+	<div class="re_row_3">
+		<div class="re_col_sm_12">
+			<h2 class="re_fs_5 tcenter">Button<br>-</h2>
+		</div>
+	</div>
+
+	<div class="re_row_3">
+
+		<p class="re_col_sm_12 tcenter re_fs_4 re_mb_2">Normal Shape</p>
+
+		<div class="re_col_sm_6 re_col_lg_24 tcenter re_mb_3">
+			<p class="re_fs_2 re_mb_2">Normal</p>
+			<p class="re_mb_1"><a class="st_btn_1 st_btn_sm" href="#">Small</a></p>
+			<p class="re_mb_1"><a class="st_btn_1" href="#">Medium</a></p>
+			<p class="re_mb_1"><a class="st_btn_1 st_btn_lg" href="#">Large</a></p>
+		</div>
+		<div class="re_col_sm_6 re_col_lg_24 tcenter re_mb_3">
+			<p class="re_fs_2 re_mb_2">Rich</p>
+			<p class="re_mb_1"><a class="st_btn_1 st_btn_rich st_btn_sm" href="#">Small</a></p>
+			<p class="re_mb_1"><a class="st_btn_1 st_btn_rich" href="#">Medium</a></p>
+			<p class="re_mb_1"><a class="st_btn_1 st_btn_rich st_btn_lg" href="#">Large</a></p>
+		</div>
+		<div class="re_col_sm_6 re_col_lg_24 tcenter re_mb_3">
+			<p class="re_fs_2 re_mb_2">Depth</p>
+			<p class="re_mb_1"><a class="st_btn_1 st_btn_depth st_btn_sm" href="#">Small</a></p>
+			<p class="re_mb_1"><a class="st_btn_1 st_btn_depth" href="#">Medium</a></p>
+			<p class="re_mb_1"><a class="st_btn_1 st_btn_depth st_btn_lg" href="#">Large</a></p>
+		</div>
+		<div class="re_col_sm_6 re_col_lg_24 tcenter re_mb_3">
+			<p class="re_fs_2 re_mb_2">Line</p>
+			<p class="re_mb_1"><a class="st_btn_1 st_btn_line st_btn_sm" href="#">Small</a></p>
+			<p class="re_mb_1"><a class="st_btn_1 st_btn_line" href="#">Medium</a></p>
+			<p class="re_mb_1"><a class="st_btn_1 st_btn_line st_btn_lg" href="#">Large</a></p>
+		</div>
+		<div class="re_col_sm_6 re_col_lg_24 tcenter re_mb_3">
+			<p class="re_fs_2 re_mb_2">Line Bold</p>
+			<p class="re_mb_1"><a class="st_btn_1 st_btn_lineb st_btn_sm" href="#">Small</a></p>
+			<p class="re_mb_1"><a class="st_btn_1 st_btn_lineb" href="#">Medium</a></p>
+			<p class="re_mb_1"><a class="st_btn_1 st_btn_lineb st_btn_lg" href="#">Large</a></p>
+		</div>
+
+		<p class="re_col_sm_12 tcenter re_fs_4 re_mb_2">Round Shape</p>
+
+		<div class="re_col_sm_6 re_col_lg_24 tcenter re_mb_3">
+			<p class="re_fs_2 re_mb_2">Normal</p>
+			<p class="re_mb_1"><a class="st_btn_1 st_btn_round st_btn_sm" href="#">Enter</a></p>
+			<p class="re_mb_1"><a class="st_btn_1 st_btn_round" href="#">Enter</a></p>
+			<p class="re_mb_1"><a class="st_btn_1 st_btn_round st_btn_lg" href="#">Enter</a></p>
+		</div>
+		<div class="re_col_sm_6 re_col_lg_24 tcenter re_mb_3">
+			<p class="re_fs_2 re_mb_2">Rich</p>
+			<p class="re_mb_1"><a class="st_btn_1 st_btn_rich st_btn_round st_btn_sm" href="#">Enter</a></p>
+			<p class="re_mb_1"><a class="st_btn_1 st_btn_rich st_btn_round" href="#">Enter</a></p>
+			<p class="re_mb_1"><a class="st_btn_1 st_btn_rich st_btn_round st_btn_lg" href="#">Enter</a></p>
+		</div>
+		<div class="re_col_sm_6 re_col_lg_24 tcenter re_mb_3">
+			<p class="re_fs_2 re_mb_2">Depth</p>
+			<p class="re_mb_1"><a class="st_btn_1 st_btn_depth st_btn_round st_btn_sm" href="#">Enter</a></p>
+			<p class="re_mb_1"><a class="st_btn_1 st_btn_depth st_btn_round" href="#">Enter</a></p>
+			<p class="re_mb_1"><a class="st_btn_1 st_btn_depth st_btn_round st_btn_lg" href="#">Enter</a></p>
+		</div>
+		<div class="re_col_sm_6 re_col_lg_24 tcenter re_mb_3">
+			<p class="re_fs_2 re_mb_2">Line</p>
+			<p class="re_mb_1"><a class="st_btn_1 st_btn_line st_btn_round st_btn_sm" href="#">Enter</a></p>
+			<p class="re_mb_1"><a class="st_btn_1 st_btn_line st_btn_round" href="#">Enter</a></p>
+			<p class="re_mb_1"><a class="st_btn_1 st_btn_line st_btn_round st_btn_lg" href="#">Enter</a></p>
+		</div>
+		<div class="re_col_sm_6 re_col_lg_24 tcenter re_mb_3">
+			<p class="re_fs_2 re_mb_2">Line Bold</p>
+			<p class="re_mb_1"><a class="st_btn_1 st_btn_lineb st_btn_round st_btn_sm" href="#">Enter</a></p>
+			<p class="re_mb_1"><a class="st_btn_1 st_btn_lineb st_btn_round" href="#">Enter</a></p>
+			<p class="re_mb_1"><a class="st_btn_1 st_btn_lineb st_btn_round st_btn_lg" href="#">Enter</a></p>
+		</div>
+
+		<p class="re_col_sm_12 tcenter re_fs_4 re_mb_2">Oval Shape</p>
+
+		<div class="re_col_sm_6 re_col_lg_24 tcenter re_mb_3">
+			<p class="re_fs_2 re_mb_2">Normal</p>
+			<p class="re_mb_1"><a class="st_btn_1 st_btn_oval st_btn_sm" href="#">Enter</a></p>
+			<p class="re_mb_1"><a class="st_btn_1 st_btn_oval" href="#">Enter</a></p>
+			<p class="re_mb_1"><a class="st_btn_1 st_btn_oval st_btn_lg" href="#">Enter</a></p>
+		</div>
+		<div class="re_col_sm_6 re_col_lg_24 tcenter re_mb_3">
+			<p class="re_fs_2 re_mb_2">Rich</p>
+			<p class="re_mb_1"><a class="st_btn_1 st_btn_rich st_btn_oval st_btn_sm" href="#">Enter</a></p>
+			<p class="re_mb_1"><a class="st_btn_1 st_btn_rich st_btn_oval" href="#">Enter</a></p>
+			<p class="re_mb_1"><a class="st_btn_1 st_btn_rich st_btn_oval st_btn_lg" href="#">Enter</a></p>
+		</div>
+		<div class="re_col_sm_6 re_col_lg_24 tcenter re_mb_3">
+			<p class="re_fs_2 re_mb_2">Depth</p>
+			<p class="re_mb_1"><a class="st_btn_1 st_btn_depth st_btn_oval st_btn_sm" href="#">Enter</a></p>
+			<p class="re_mb_1"><a class="st_btn_1 st_btn_depth st_btn_oval" href="#">Enter</a></p>
+			<p class="re_mb_1"><a class="st_btn_1 st_btn_depth st_btn_oval st_btn_lg" href="#">Enter</a></p>
+		</div>
+		<div class="re_col_sm_6 re_col_lg_24 tcenter re_mb_3">
+			<p class="re_fs_2 re_mb_2">Line</p>
+			<p class="re_mb_1"><a class="st_btn_1 st_btn_line st_btn_oval st_btn_sm" href="#">Enter</a></p>
+			<p class="re_mb_1"><a class="st_btn_1 st_btn_line st_btn_oval" href="#">Enter</a></p>
+			<p class="re_mb_1"><a class="st_btn_1 st_btn_line st_btn_oval st_btn_lg" href="#">Enter</a></p>
+		</div>
+		<div class="re_col_sm_6 re_col_lg_24 tcenter re_mb_3">
+			<p class="re_fs_2 re_mb_2">Line Bold</p>
+			<p class="re_mb_1"><a class="st_btn_1 st_btn_lineb st_btn_oval st_btn_sm" href="#">Enter</a></p>
+			<p class="re_mb_1"><a class="st_btn_1 st_btn_lineb st_btn_oval" href="#">Enter</a></p>
+			<p class="re_mb_1"><a class="st_btn_1 st_btn_lineb st_btn_oval st_btn_lg" href="#">Enter</a></p>
+		</div>
+
+		<p class="re_col_sm_12 tcenter re_fs_4 re_mb_2">Disabled</p>
+
+		<div class="re_col_sm_6 re_col_lg_24 tcenter re_mb_3">
+			<p class="re_fs_2 re_mb_2">Normal</p>
+			<p class="re_mb_1"><input type="submit" class="st_btn_1 st_btn_round" value="button" disabled></p>
+		</div>
+		<div class="re_col_sm_6 re_col_lg_24 tcenter re_mb_3">
+			<p class="re_fs_2 re_mb_2">Rich</p>
+			<p class="re_mb_1"><input type="submit" class="st_btn_1 st_btn_rich st_btn_round" value="button" disabled></p>
+		</div>
+		<div class="re_col_sm_6 re_col_lg_24 tcenter re_mb_3">
+			<p class="re_fs_2 re_mb_2">Depth</p>
+			<p class="re_mb_1"><input type="submit" class="st_btn_1 st_btn_depth st_btn_round" value="button" disabled></p>
+		</div>
+		<div class="re_col_sm_6 re_col_lg_24 tcenter re_mb_3">
+			<p class="re_fs_2 re_mb_2">Line</p>
+			<p class="re_mb_1"><input type="submit" class="st_btn_1 st_btn_line st_btn_round" value="button" disabled></p>
+		</div>
+		<div class="re_col_sm_6 re_col_lg_24 tcenter re_mb_3">
+			<p class="re_fs_2 re_mb_2">Line Bold</p>
+			<p class="re_mb_1"><input type="submit" class="st_btn_1 st_btn_lineb st_btn_round" value="button" disabled></p>
+		</div>
+
+
+		<p class="re_col_sm_12 tcenter re_fs_4 re_mb_2">Group</p>
+
+		<div class="re_col_sm_12 re_mb_3">
+			<div class="st_btn_group">
+				<a class="st_btn_1 st_btn_lg" href="#">Large</a>
+				<a class="st_btn_1 st_btn_lg" href="#">Normal</a>
+				<a class="st_btn_1 st_btn_lg" href="#">Button</a>
+			</div>
+		</div>
+
+		<div class="re_col_sm_12 re_mb_3">
+			<div class="st_btn_group">
+				<a class="st_btn_1 st_btn_rich" href="#">Medium</a>
+				<a class="st_btn_1 st_btn_rich" href="#">Rich</a>
+				<a class="st_btn_1 st_btn_rich" href="#">Button</a>
+			</div>
+		</div>
+
+		<div class="re_col_sm_12 re_mb_3">
+			<div class="st_btn_group">
+				<a class="st_btn_1 st_btn_depth" href="#">Medium</a>
+				<a class="st_btn_1 st_btn_depth" href="#">Depth</a>
+				<a class="st_btn_1 st_btn_depth" href="#">Button</a>
+			</div>
+		</div>
+
+		<div class="re_col_sm_12 re_mb_3">
+			<div class="st_btn_group">
+				<a class="st_btn_1 st_btn_sm st_btn_line" href="#">Small</a>
+				<a class="st_btn_1 st_btn_sm st_btn_line" href="#">Line</a>
+				<a class="st_btn_1 st_btn_sm st_btn_line" href="#">Button</a>
+			</div>
+		</div>
+
+	</div>
+
+</div>
+
+<!-- Form -->
+<div class="re_container re_mt_7">
+
+	<div class="re_row_3">
+		<div class="re_col_sm_12">
+			<h2 class="re_fs_5 tcenter">Form<br>-</h2>
+		</div>
+	</div>
+
+	<div class="re_row_3">
+	<div class="re_col_sm_12 fcenter st_form">
+
+	<div class="st_flex re_mb_2">
+		<div class="re_full_xs" style="width: 150px;">Text</div>
+		<div class="st_flexitem">
+			<div class="re_row_3">
+				<div class="re_col_sm_4"><input class="st_form_input" type="text"/></div>
+				<div class="re_col_sm_4"><input class="st_form_input" type="text" value="Disabled" disabled/></div>
+				<div class="re_col_sm_4"><input class="st_form_input" type="text" value="Readonly" readonly/></div>
+			</div>
+		</div>
+	</div>
+	<div class="st_flex re_mb_2">
+		<div class="re_full_xs" style="width: 150px;">Select</div>
+		<div class="st_flexitem">
+			<div class="re_row_3">
+				<div class="re_col_sm_6">
+					<select class="st_form_input"><option value=""></option><option value="">TypeA</option><option value="">TypeB</option></select>
+				</div>
+				<div class="re_col_sm_6">
+					<select class="st_form_input" disabled><option value="">Disabled</option><option value="">TypeA</option><option value="">TypeB</option></select>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="st_flex re_mb_2">
+		<div class="re_full_xs" style="width: 150px;">Textarea</div>
+		<div class="st_flexitem">
+			<div class="re_row_3">
+				<div class="re_col_sm_4"><textarea class="st_form_input" rows="5"></textarea></div>
+				<div class="re_col_sm_4"><textarea class="st_form_input" rows="5" disabled>Disabled</textarea></div>
+				<div class="re_col_sm_4"><textarea class="st_form_input" rows="5" readonly>Readonly</textarea></div>
+			</div>
+		</div>
+	</div>
+	<div class="st_flex re_mb_2">
+		<div class="re_full_xs" style="width: 150px;">Checkbox</div>
+		<div class="st_flexitem"><label><input class="st_form_input" type="checkbox"/><span></span> basic</label> <label><input class="st_form_input" type="checkbox" disabled/><span></span> disabled</label></div>
+	</div>
+	<div class="st_flex re_mb_2">
+		<div class="re_full_xs" style="width: 150px;">Radio</div>
+		<div class="st_flexitem"><label><input class="st_form_input" type="radio"/><span></span> basic</label> <label><input class="st_form_input" type="radio" disabled/><span></span> disabled</label></div>
+	</div>
+	<div class="tcenter"><input class="st_btn_1 st_btn_oval re_ph_3" type="submit" value="Send"/></div>
+		<div class="st_form_sm re_pt_1">
+		<label><input class="st_form_input" name="a" type="checkbox"/><span></span> SM</label>
+		<label><input class="st_form_input" name="a" type="checkbox"/><span></span> SM</label>
+		<label><input class="st_form_input" name="a" type="checkbox"/><span></span> SM</label>
+		<label><input class="st_form_input" name="a" type="checkbox"/><span></span> SM</label>
+		<label><input class="st_form_input" name="a" type="checkbox"/><span></span> SM</label>
+		</div>
+		<div class="st_form_lg re_pt_1">
+		<label><input class="st_form_input" name="a" type="checkbox"/><span></span> LG</label>
+		<label><input class="st_form_input" name="a" type="checkbox"/><span></span> LG</label>
+		<label><input class="st_form_input" name="a" type="checkbox"/><span></span> LG</label>
+		<label><input class="st_form_input" name="a" type="checkbox"/><span></span> LG</label>
+		<label><input class="st_form_input" name="a" type="checkbox"/><span></span> LG</label>
+		</div>
+		<div class="st_form_sm re_pt_1">
+		<label><input class="st_form_input" name="a" type="radio"/><span></span> SM</label>
+		<label><input class="st_form_input" name="a" type="radio"/><span></span> SM</label>
+		<label><input class="st_form_input" name="a" type="radio"/><span></span> SM</label>
+		<label><input class="st_form_input" name="a" type="radio"/><span></span> SM</label>
+		<label><input class="st_form_input" name="a" type="radio"/><span></span> SM</label>
+		</div>
+		<div class="st_form_lg re_pt_1">
+		<label><input class="st_form_input" name="a" type="radio"/><span></span> LG</label>
+		<label><input class="st_form_input" name="a" type="radio"/><span></span> LG</label>
+		<label><input class="st_form_input" name="a" type="radio"/><span></span> LG</label>
+		<label><input class="st_form_input" name="a" type="radio"/><span></span> LG</label>
+		<label><input class="st_form_input" name="a" type="radio"/><span></span> LG</label>
+		</div>
+
+	</div>
+	</div>
+</div>
+
+<div class="re_container re_mt_7">
+
+	<div class="re_row_3">
+		<div class="re_col_sm_12">
+			<h2 class="re_fs_5 tcenter">Group & Size<br>-</h2>
+		</div>
+	</div>
+
+	<div class="re_col_sm_12 fcenter st_form">
+	<div class="re_row_3">
+		<div class="re_col_sm_12 re_mb_3 st_form_group st_form_sm">
+			<div class="st_form_addon">TEL</div><input type="text" class="st_form_input"/><div class="st_form_addon">-</div><input type="text" class="st_form_input"/><div class="st_form_addon">-</div><input type="text" class="st_form_input"/>
+		</div>
+		<div class="re_col_sm_12 re_mb_3 st_form_group">
+			<div class="st_form_addon">$</div>
+			<input type="text" class="st_form_input"/>
+			<div class="st_form_addon">-</div>
+			<a class="st_btn_1 st_btn_rich">Send</a>
+		</div>
+		<div class="re_col_sm_12 re_mb_3 st_form_group st_form_lg">
+			<input type="text" class="st_form_input"/><a class="st_btn_1 st_btn_depth st_btn_lg">Send</a>
+		</div>
+	</div>
+	</div>
+</div>
+
+<!-- Table -->
+<div class="re_container re_mt_7">
+
+	<div class="re_row_3">
+		<div class="re_col_sm_12">
+			<h2 class="re_fs_5 tcenter">Table<br>-</h2>
+		</div>
+	</div>
+
+	<div class="re_row_3">
+
+	<div class="re_col_sm_12">
+	<table class="st_table fcenter">
+	<caption>Caption</caption>
+	<tr>
+	<th></th>
+	<th>Title</th>
+	<th>Title</th>
+	<th>Title</th>
+	</tr>
+	<tr>
+	<th>Title</th>
+	<td>Text</td>
+	<td>Text</td>
+	<td>Text</td>
+	</tr>
+	<tr>
+	<th>Title</th>
+	<td>Text</td>
+	<td>Text</td>
+	<td>Text</td>
+	</tr>
+	</table>
+	</div>
+
+	</div>
+
+</div>
+
+<!-- Loading -->
+<div class="re_container re_mt_7">
+
+	<div class="re_row_3">
+		<div class="re_col_sm_12">
+			<h2 class="re_fs_5 tcenter">Loading<br>-</h2>
+		</div>
+	</div>
+
+	<div class="re_row_3">
+
+	<div class="re_col_sm_12">
+		<div class="grids re_p_4" style="position: relative;overflow: hidden;">
+			<p class="re_fs_3">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+			<div class="st_loader"></div>
+		</div>
+	</div>
+
+	</div>
+</div>
+
+
+<!-- Brake Point -->
+<div class="re_pv_1 re_ph_2 re_fs_3" style="position: fixed;right: 0;bottom: 0;display: inline-block; background: #444; color: #fff;">
+	<p><span class="re_hide_sm">lg</span><span class="re_hide_lg">sm</span></p>
+	<p class="select_btn"><a>demo1</a> <a>demo2</a> <a>demo3</a></p>
+</div>
+
+
+<script>
+	(function(){
+		var a = document.querySelectorAll('.select_btn a');
+		var body = document.querySelector('body');
+		console.log(a[0]);
+		body.className = a[0].textContent;
+		a.forEach(function(el){
+			el.addEventListener('click', function(e){
+				body.className = e.target.textContent;
+			});
+		});
+	})();
+</script>
+</body>
+</html>
+
+
