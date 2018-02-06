@@ -1,4 +1,4 @@
-/*! v0.5.6 | MIT License | github.com/webgoto/stre */
+/*! v0.6.0 | MIT License | github.com/webgoto/stre */
 
 /*########################################
          FUNCTION
@@ -11,50 +11,46 @@
 		@return lighten($color, $amount);
 	}
 }
-
 /*########################################
-         GLOBAL
+         VARIABLE
 ########################################*/
-
-/*########################################
-         MIXIN
-########################################*/
+$prefix: "st_";
 
 /*========================================
          Button
 ========================================*/
 @mixin make_button($name, $color_text, $color_bg){
-	.st_btn#{$name}{
+	.#{$prefix}btn#{$name}{
 		color: $color_text;
 		background: $color_bg;
 		border: 1px solid $color_bg;
 	}
-	.st_btn#{$name}:hover:not([disabled]){
+	.#{$prefix}btn#{$name}:hover:not([disabled]){
 		background: change_lightness($color_bg, 4%);
 	}
-	.st_btn#{$name}.st_btn_rich{
+	.#{$prefix}btn#{$name}.#{$prefix}btn_rich{
 		border-color: darken($color_bg, 4%);
 		text-shadow:0 1px 0 darken($color_bg, 2%);
 	}
-	.st_btn#{$name}.st_btn_depth{
+	.#{$prefix}btn#{$name}.#{$prefix}btn_depth{
 		top: -3px;
 		box-shadow: 0 3px darken($color_bg, 8%);
 	}
-	.st_btn#{$name}.st_btn_depth:hover:not([disabled]){
+	.#{$prefix}btn#{$name}.#{$prefix}btn_depth:hover:not([disabled]){
 		background: $color_bg;
 		top: -2px;
 		box-shadow: 0 2px darken($color_bg, 8%);
 	}
-	.st_btn#{$name}[class*="st_btn_line"]{
+	.#{$prefix}btn#{$name}[class*="#{$prefix}btn_line"]{
 		color: $color_bg;
 	}
-	.st_btn#{$name}[class*="st_btn_line"]:hover:not([disabled]){
+	.#{$prefix}btn#{$name}[class*="#{$prefix}btn_line"]:hover:not([disabled]){
 		background: $color_bg;
 		color: $color_text;
 	}
 }
 
-[class*="st_btn"]:not(.st_btn_group){
+[class*="#{$prefix}btn"]:not(.#{$prefix}btn_group){
 	box-sizing: border-box;
 	text-align: center;
 	font-size: 13px;
@@ -68,31 +64,32 @@
 	cursor: pointer;
 	vertical-align: middle;
 }
-[class*="st_btn"]:not(.st_btn_group)[disabled]{
+[class*="#{$prefix}btn"]:not(.#{$prefix}btn_group)[disabled]{
 	transition: 0s;
 	opacity: 0.5;
 	cursor: not-allowed;
 }
-[class*="st_btn"]:not(.st_btn_group):active{top: 1px;}
+[class*="#{$prefix}btn"]:not(.#{$prefix}btn_group):active{top: 1px;}
 
-:root .st_btn_sm{font-size: 11px;padding: 0px 9px;line-height: 26px;height: 26px;}
-:root .st_btn_lg{font-size: 15px;padding: 0px 17px;line-height: 42px;height: 42px;}
-:root .st_btn_round{border-radius: 4px;}
-:root .st_btn_oval{border-radius: 999px;}
-:root .st_btn_rich{box-shadow: 0 1px 0 rgba(255,255,255,0.3)inset;}
-:root .st_btn_depth.st_btn_depth.st_btn_depth:active:not([disabled]){top: 0px;box-shadow: none;}
-:root .st_btn_line.st_btn_line{background: none;border-width: 1px;}
-:root .st_btn_lineb.st_btn_lineb{background: none;border-width: 2px;}
+:root .#{$prefix}btn_sm{font-size: 11px;padding: 0px 9px;line-height: 26px;height: 26px;}
+:root .#{$prefix}btn_lg{font-size: 15px;padding: 0px 17px;line-height: 42px;height: 42px;}
+:root .#{$prefix}btn_round{border-radius: 4px;}
+:root .#{$prefix}btn_oval{border-radius: 999px;}
+:root .#{$prefix}btn_rich{box-shadow: 0 1px 0 rgba(255,255,255,0.3)inset;}
+:root .#{$prefix}btn_depth.#{$prefix}btn_depth.#{$prefix}btn_depth:active:not([disabled]){top: 0px;box-shadow: none;}
+:root .#{$prefix}btn_line.#{$prefix}btn_line{background: none;border-width: 1px;}
+:root .#{$prefix}btn_lineb.#{$prefix}btn_lineb{background: none;border-width: 2px;}
 
-.st_btn_group{display: flex;justify-content: space-around;width: 100%;}
-.st_btn_group > *{width: 50%;word-break: break-all;}
-.st_btn_group > *:first-child{border-radius: 4px 0 0 4px;}
-.st_btn_group > *:last-child{border-radius: 0 4px 4px 0;}
-.st_btn_group > .st_btn_line + .st_btn_line{margin-left: -1px;}
-.st_btn_group > .st_btn_lineb + .st_btn_lineb{margin-left: -2px;}
+.#{$prefix}btn_group{display: flex;justify-content: space-around;width: 100%;}
+.#{$prefix}btn_group > *{width: 50%;word-break: break-all;}
+.#{$prefix}btn_group > *:first-child{border-radius: 4px 0 0 4px;}
+.#{$prefix}btn_group > *:last-child{border-radius: 0 4px 4px 0;}
+.#{$prefix}btn_group > *:not(:last-child){border-right: none;}
+.#{$prefix}btn_group > .#{$prefix}btn_line + .#{$prefix}btn_line{margin-left: -1px;}
+.#{$prefix}btn_group > .#{$prefix}btn_lineb + .#{$prefix}btn_lineb{margin-left: -2px;}
 
 //depthを押した時、位置がずれる対策
-.st_btn_depth:before{
+.#{$prefix}btn_depth:before{
 	content: ' ';
 	position: absolute;
 	display: block;
@@ -101,30 +98,30 @@
 	right: 0;
 	bottom: 0;
 }
-.st_btn_depth:hover:before{
+.#{$prefix}btn_depth:hover:before{
 	top: -1px;
 	bottom: 1px;
 }
-.st_btn_depth:active:before{
+.#{$prefix}btn_depth:active:before{
 	top: -3px;
 	bottom: 3px;
 }
-.st_btn_round:before{
+.#{$prefix}btn_round:before{
 	border-radius: 4px;
 }
-.st_btn_round:before{
+.#{$prefix}btn_round:before{
 	border-radius: 4px;
 }
-.st_btn_oval:before{
+.#{$prefix}btn_oval:before{
 	border-radius: 999px;
 }
 /*========================================
          Form
 ========================================*/
 
-.st_form_input,
-.st_form_input[type="checkbox"] + span,
-.st_form_input[type="radio"] + span{
+.#{$prefix}form_input,
+.#{$prefix}form_input[type="checkbox"] + span,
+.#{$prefix}form_input[type="radio"] + span{
 	appearance: none;
 	display: inline-block;
 	box-sizing: border-box;
@@ -137,14 +134,14 @@
 	vertical-align: middle;
 }
 
-textarea.st_form_input.st_form_input{
+textarea.#{$prefix}form_input.#{$prefix}form_input{
 	height: auto;
 	line-height: 1.5;
 	padding-top: 0.6em;
 	padding-bottom: 0.6em;
 }
 
-select.st_form_input.st_form_input{
+select.#{$prefix}form_input.#{$prefix}form_input{
 	background-repeat: no-repeat;
 	background-position: right 6px center;
 	background-size: 9px 6px;
@@ -154,8 +151,8 @@ select.st_form_input.st_form_input{
 	}
 }
 
-.st_form_input[type='checkbox'],
-.st_form_input[type='radio']{
+.#{$prefix}form_input[type='checkbox'],
+.#{$prefix}form_input[type='radio']{
 	position: absolute;
 	left: -99999px;
 	& + span{
@@ -170,24 +167,19 @@ select.st_form_input.st_form_input{
 		content: " ";
 	}
 
-	.st_form_sm & + span,
-	&.st_form_sm + span{
+	.#{$prefix}form_sm & + span,
+	&.#{$prefix}form_sm + span{
 		width: 16px;
 		height: 16px;
 	}
-	//.st_form_md & + span,
-	//&.st_form_md + span{
-	//	width: 22px;
-	//	height: 22px;
-	//}
-	.st_form_lg & + span,
-	&.st_form_lg + span{
+	.#{$prefix}form_lg & + span,
+	&.#{$prefix}form_lg + span{
 		width: 22px;
 		height: 22px;
 	}
 }
 
-.st_form_input[type='checkbox']{
+.#{$prefix}form_input[type='checkbox']{
 	&:checked + span:after{
 		box-sizing: border-box;
 		top: 26%;
@@ -200,7 +192,7 @@ select.st_form_input.st_form_input{
 	}
 }
 
-.st_form_input[type="radio"]{
+.#{$prefix}form_input[type="radio"]{
 	& + span{
 		border-radius: 50%;
 	}
@@ -217,7 +209,7 @@ select.st_form_input.st_form_input{
 	}
 }
 
-.st_form_addon{
+.#{$prefix}form_addon{
 	box-sizing: border-box;
 	height: 34px;
 	line-height: 34px;
@@ -226,13 +218,13 @@ select.st_form_input.st_form_input{
 	font-weight: bold;
 }
 
-.st_form_group{
+.#{$prefix}form_group{
 	display: flex;
-	& > .st_form_input{
+	& > .#{$prefix}form_input{
 		border-radius: 0px;
 		flex: 1;
 	}
-	:root & > [class*="st_form"]:not(:first-child){
+	:root & > [class*="#{$prefix}form"]:not(:first-child){
 		border-left-color: transparent;
 	}
 	& > *:first-child{
@@ -243,73 +235,73 @@ select.st_form_input.st_form_input{
 	}
 }
 
-:root:root .st_form_input:focus{
+:root:root .#{$prefix}form_input:focus{
 	outline: 0;
 	border-color: currentColor;
 }
 
-.st_form_sm .st_form_addon,
-.st_form_sm .st_form_input,
-.st_form_sm.st_form_addon,
-.st_form_sm.st_form_input{font-size: 13px;padding: 0px 7px;line-height: 26px;height: 26px;}
+.#{$prefix}form_sm .#{$prefix}form_addon,
+.#{$prefix}form_sm .#{$prefix}form_input,
+.#{$prefix}form_sm.#{$prefix}form_addon,
+.#{$prefix}form_sm.#{$prefix}form_input{font-size: 13px;padding: 0px 7px;line-height: 26px;height: 26px;}
 
-//.st_form_md .st_form_addon,
-//.st_form_md .st_form_input,
-//.st_form_md.st_form_addon,
-//.st_form_md.st_form_input{font-size: 13px;padding: 0px 8px;line-height: 34px;height: 34px;}
+//.#{$prefix}form_md .#{$prefix}form_addon,
+//.#{$prefix}form_md .#{$prefix}form_input,
+//.#{$prefix}form_md.#{$prefix}form_addon,
+//.#{$prefix}form_md.#{$prefix}form_input{font-size: 13px;padding: 0px 8px;line-height: 34px;height: 34px;}
 
-.st_form_lg .st_form_addon,
-.st_form_lg .st_form_input,
-.st_form_lg.st_form_addon,
-.st_form_lg.st_form_input{font-size: 15px;padding: 0px 9px;line-height: 42px;height: 42px;}
+.#{$prefix}form_lg .#{$prefix}form_addon,
+.#{$prefix}form_lg .#{$prefix}form_input,
+.#{$prefix}form_lg.#{$prefix}form_addon,
+.#{$prefix}form_lg.#{$prefix}form_input{font-size: 15px;padding: 0px 9px;line-height: 42px;height: 42px;}
 
 @mixin make_form($name, $color_text, $color_border, $color_bg){
 
-	.st_form#{$name} .st_form_addon,
-	.st_form#{$name}.st_form_addon{
+	.#{$prefix}form#{$name} .#{$prefix}form_addon,
+	.#{$prefix}form#{$name}.#{$prefix}form_addon{
 		border: 1px solid $color_border;
 		color: $color_text;
 		background-color: change_lightness($color_bg, 5);
 	}
 
-	.st_form#{$name} .st_form_input,
-	.st_form#{$name}.st_form_input,
-	.st_form#{$name} .st_form_input[type="checkbox"] + span,
-	.st_form#{$name}.st_form_input[type="checkbox"] + span,
-	.st_form#{$name} .st_form_input[type="radio"] + span,
-	.st_form#{$name}.st_form_input[type="radio"] + span{
+	.#{$prefix}form#{$name} .#{$prefix}form_input,
+	.#{$prefix}form#{$name}.#{$prefix}form_input,
+	.#{$prefix}form#{$name} .#{$prefix}form_input[type="checkbox"] + span,
+	.#{$prefix}form#{$name}.#{$prefix}form_input[type="checkbox"] + span,
+	.#{$prefix}form#{$name} .#{$prefix}form_input[type="radio"] + span,
+	.#{$prefix}form#{$name}.#{$prefix}form_input[type="radio"] + span{
 		border: 1px solid $color_border;
 		color: $color_text;
 		background-color: $color_bg;
 	}
 
-	.st_form#{$name} select.st_form_input{
+	.#{$prefix}form#{$name} select.#{$prefix}form_input{
 		background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj48c3ZnIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCA3IDUiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgc3R5bGU9ImZpbGwtcnVsZTpldmVub2RkO2NsaXAtcnVsZTpldmVub2RkOyI+PHBhdGggZD0iTTYuMzUyLDAuNzY5bC0yLjk3NywzLjMzOWwtMi45NzcsLTMuMzM5IiBzdHlsZT0iZmlsbDpub25lO3N0cm9rZTojMDAwO3N0cm9rZS13aWR0aDoxcHg7Ii8+PC9zdmc+');
 	}
 
-	.st_form#{$name} .st_form_input[disabled],
-	.st_form#{$name}.st_form_input[disabled],
-	.st_form#{$name} .st_form_input[readonly],
-	.st_form#{$name}.st_form_input[readonly],
-	.st_form#{$name} .st_form_input[disabled][type="checkbox"]+span,
-	.st_form#{$name}.st_form_input[disabled][type="checkbox"]+span,
-	.st_form#{$name} .st_form_input[readonly][type="checkbox"]+span,
-	.st_form#{$name}.st_form_input[readonly][type="checkbox"]+span,
-	.st_form#{$name} .st_form_input[disabled][type="radio"]+span,
-	.st_form#{$name}.st_form_input[disabled][type="radio"]+span,
-	.st_form#{$name} .st_form_input[readonly][type="radio"]+span,
-	.st_form#{$name}.st_form_input[readonly][type="radio"]+span{
+	.#{$prefix}form#{$name} .#{$prefix}form_input[disabled],
+	.#{$prefix}form#{$name}.#{$prefix}form_input[disabled],
+	.#{$prefix}form#{$name} .#{$prefix}form_input[readonly],
+	.#{$prefix}form#{$name}.#{$prefix}form_input[readonly],
+	.#{$prefix}form#{$name} .#{$prefix}form_input[disabled][type="checkbox"]+span,
+	.#{$prefix}form#{$name}.#{$prefix}form_input[disabled][type="checkbox"]+span,
+	.#{$prefix}form#{$name} .#{$prefix}form_input[readonly][type="checkbox"]+span,
+	.#{$prefix}form#{$name}.#{$prefix}form_input[readonly][type="checkbox"]+span,
+	.#{$prefix}form#{$name} .#{$prefix}form_input[disabled][type="radio"]+span,
+	.#{$prefix}form#{$name}.#{$prefix}form_input[disabled][type="radio"]+span,
+	.#{$prefix}form#{$name} .#{$prefix}form_input[readonly][type="radio"]+span,
+	.#{$prefix}form#{$name}.#{$prefix}form_input[readonly][type="radio"]+span{
 		cursor: not-allowed;
 		background-color: change_lightness($color_bg, 10);
 		color: rgba($color_text, 0.6);
 	}
 
-	//.st_form_input.st_form#{$name}:focus,
-	//.st_form_input.st_form#{$name}:focus,
-	//.st_form_input.st_form#{$name}[type="checkbox"]:focus+*,
-	//.st_form_input.st_form#{$name}[type="checkbox"]:focus+*,
-	//.st_form_input.st_form#{$name}[type="radio"]:focus+*,
-	//.st_form_input.st_form#{$name}[type="radio"]:focus+*{
+	//.#{$prefix}form_input.#{$prefix}form#{$name}:focus,
+	//.#{$prefix}form_input.#{$prefix}form#{$name}:focus,
+	//.#{$prefix}form_input.#{$prefix}form#{$name}[type="checkbox"]:focus+*,
+	//.#{$prefix}form_input.#{$prefix}form#{$name}[type="checkbox"]:focus+*,
+	//.#{$prefix}form_input.#{$prefix}form#{$name}[type="radio"]:focus+*,
+	//.#{$prefix}form_input.#{$prefix}form#{$name}[type="radio"]:focus+*{
 	//	outline: 0;
 	//	background-color: change_lightness($color_bg, 1);
 	//}
@@ -319,7 +311,7 @@ select.st_form_input.st_form_input{
 /*========================================
          Table
 ========================================*/
-[class*="st_table"]{
+[class*="#{$prefix}table"]{
 	width: 100%;
 	border-collapse: separate;
 	border-spacing: 0;
@@ -335,7 +327,7 @@ select.st_form_input.st_form_input{
 	}
 }
 @mixin make_table($name, $th_color, $th_bgcolor, $td_bgcolor, $radius) {
-	table.st_table#{$name}{
+	table.#{$prefix}table#{$name}{
 		border-radius: $radius;
 		& > *:first-child  > tr:first-child > *:first-child{
 			border-radius: $radius 0 0 0;
@@ -362,7 +354,7 @@ select.st_form_input.st_form_input{
 /*========================================
          Loader
 ========================================*/
-[class*="st_loader"]{
+[class*="#{$prefix}loader"]{
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -389,19 +381,19 @@ select.st_form_input.st_form_input{
 		margin-top: 7px;
 	}
 }
-body > [class*="st_loader"]{
+body > [class*="#{$prefix}loader"]{
 	position: fixed;
 }
 @mixin make_loader($name, $color_circle, $color_bg, $opacity ,$text) {
-	.st_loader#{$name}{
+	.#{$prefix}loader#{$name}{
 		background: rgba($color_bg, $opacity);
 		color: $color_circle;
 	}
-	.st_loader#{$name}:before{
+	.#{$prefix}loader#{$name}:before{
 		border: 2px solid rgba($color_circle, 0.3);
 		border-bottom-color: $color_circle;
 	}
-	.st_loader#{$name}:after{
+	.#{$prefix}loader#{$name}:after{
 		content: $text;
 	}
 }
