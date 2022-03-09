@@ -4,7 +4,6 @@
 <title>STRE CSS FRAMEWORK</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="normalize.min.css"/>
 <style type="text/css">
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
 button,hr,input{overflow:visible}audio,canvas,progress,video{display:inline-block}progress,sub,sup{vertical-align:baseline}html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0} menu,article,aside,details,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}figcaption,figure,main{display:block}figure{margin:1em 40px}hr{box-sizing:content-box;height:0}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative}sub{bottom:-.25em}sup{top:-.5em}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,input{}button,select{text-transform:none}[type=submit], [type=reset],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:ButtonText dotted 1px}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}[hidden],template{display:none}
@@ -137,7 +136,7 @@ body {
 	</div>
 
 	<div class="re_row_3">
-		<div class="re_col_sm_1 re_mb_5">
+		<div class="re_col_sm_1 re_mb_2">
 		<p class="grids tcenter re_pv_1">1</p>
 		</div>
 		<div class="re_col_sm_1 re_mb_2">
@@ -755,7 +754,7 @@ body {
 		<div class="re_full_xs" style="width: 150px;">Text</div>
 		<div class="st_flexitem">
 			<div class="re_row_3">
-				<div class="re_col_sm_4"><input class="st_form_input" type="text"/></div>
+				<div class="re_col_sm_4"><input class="st_form_input" type="text" placeholder="placeholder"/></div>
 				<div class="re_col_sm_4"><input class="st_form_input" type="text" value="Disabled" disabled/></div>
 				<div class="re_col_sm_4"><input class="st_form_input" type="text" value="Readonly" readonly/></div>
 			</div>
@@ -783,6 +782,16 @@ body {
 				<div class="re_col_sm_4"><textarea class="st_form_input" rows="5" readonly>Readonly</textarea></div>
 			</div>
 		</div>
+	</div>
+	<div class="st_flex re_mb_2">
+		<div>Range</div>
+		<div><input class="st_form_input" type="range"/></div>
+		<div>Disabled</div>
+		<div><input class="st_form_input" type="range" disabled/></div>
+		<div>SM</div>
+		<div><input class="st_form_input st_form_sm" type="range"/></div>
+		<div>LG</div>
+		<div><input class="st_form_input st_form_lg" type="range"/></div>
 	</div>
 	<div class="st_flex re_mb_2">
 		<div class="re_full_xs" style="width: 150px;">Checkbox</div>
@@ -922,11 +931,11 @@ body {
 
 <script>
 	(function(){
-		var a = document.querySelectorAll('.select_btn a');
+		var nodelist = document.querySelectorAll('.select_btn a');
+		var node = Array.prototype.slice.call(nodelist,0);
 		var body = document.querySelector('body');
-		console.log(a[0]);
-		body.className = a[0].textContent;
-		a.forEach(function(el){
+		body.className = node[0].textContent;
+		node.forEach(function(el){
 			el.addEventListener('click', function(e){
 				body.className = e.target.textContent;
 			});

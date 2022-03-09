@@ -1,4 +1,4 @@
-/*! v0.6.1 | MIT License | github.com/webgoto/stre */
+/*! v0.7.3 | MIT License | github.com/webgoto/stre */
 
 /*########################################
          FUNCTION
@@ -147,7 +147,7 @@ select.#{$prefix}form_input.#{$prefix}form_input{
 	background-position: right 6px center;
 	background-size: 9px 6px;
 	padding-right: 20px;
-	&::-ms-expand {
+	&::-ms-expand{
 		display: none;
 	}
 }
@@ -177,6 +177,120 @@ select.#{$prefix}form_input.#{$prefix}form_input{
 	&.#{$prefix}form_lg + span{
 		width: 22px;
 		height: 22px;
+	}
+}
+
+.#{$prefix}form_input[type='range']{
+	&.#{$prefix}form_input.#{$prefix}form_input{
+		border: none;
+		background-color: transparent;
+		padding: 0;
+		height: 18px;
+	}
+	.#{$prefix}form_sm &,
+	&.#{$prefix}form_sm{
+		height: 16px;
+	}
+	.#{$prefix}form_lg &,
+	&.#{$prefix}form_lg{
+		height: 22px;
+	}
+	&.#{$prefix}form_input.#{$prefix}form_input[disabled]{
+		background-color: transparent;
+	}
+	&:focus{
+		outline: none;
+	}
+
+	&::-webkit-slider-runnable-track{
+		height: 4px;
+		cursor: pointer;
+	}
+	&::-webkit-slider-thumb{
+		-webkit-appearance: none;
+		width: 18px;
+		height: 18px;
+		margin-top: -8px;
+		border-radius: 50%;
+		cursor: pointer;
+	}
+	&[disabled]::-webkit-slider-runnable-track{
+		cursor: not-allowed;
+	}
+	&[disabled]::-webkit-slider-thumb{
+		cursor: not-allowed;
+	}
+	.#{$prefix}form_sm &::-webkit-slider-thumb{
+		width: 16px;
+		height: 16px;
+		margin-top: -7px;
+	}
+	&.#{$prefix}form_sm::-webkit-slider-thumb{
+		width: 16px;
+		height: 16px;
+		margin-top: -7px;
+	}
+	.#{$prefix}form_lg &::-webkit-slider-thumb{
+		width: 16px;
+		height: 16px;
+		margin-top: -7px;
+	}
+	&.#{$prefix}form_lg::-webkit-slider-thumb{
+		width: 22px;
+		height: 22px;
+		margin-top: -10px;
+	}
+
+	&::-moz-range-track{
+		height: 2px;
+		cursor: pointer;
+	}
+	&::-moz-range-thumb{
+		width: 18px;
+		height: 18px;
+		margin-top: -8px;
+		border-radius: 50%;
+		cursor: pointer;
+	}
+	&[disabled]::-moz-range-track{
+		cursor: not-allowed;
+	}
+	&[disabled]::-moz-range-thumb{
+		cursor: not-allowed;
+	}
+	.#{$prefix}form_sm &::-moz-range-thumb{
+		width: 16px;
+		height: 16px;
+		margin-top: -7px;
+	}
+	&.#{$prefix}form_sm::-moz-range-thumb{
+		width: 16px;
+		height: 16px;
+		margin-top: -7px;
+	}
+	.#{$prefix}form_lg &::-moz-range-thumb{
+		width: 16px;
+		height: 16px;
+		margin-top: -7px;
+	}
+	&.#{$prefix}form_lg::-moz-range-thumb{
+		width: 22px;
+		height: 22px;
+		margin-top: -10px;
+	}
+
+	&::-ms-track{
+		cursor: pointer;
+		height: 4px;
+		background: transparent;
+		border-color: transparent;
+		color: transparent;
+	}
+	&::-ms-thumb{
+		cursor: pointer;
+		width: 16px;
+		height: 16px;
+		border-radius: 50%;
 	}
 }
 
@@ -216,7 +330,6 @@ select.#{$prefix}form_input.#{$prefix}form_input{
 	line-height: 34px;
 	padding: 0 8px;
 	font-size: 14px;
-	font-weight: bold;
 }
 
 .#{$prefix}form_group{
@@ -225,8 +338,8 @@ select.#{$prefix}form_input.#{$prefix}form_input{
 		border-radius: 0px;
 		flex: 1;
 	}
-	:root & > [class*="#{$prefix}form"]:not(:first-child){
-		border-left-color: transparent;
+	& > [class*="#{$prefix}form_"]:not(:first-child):not(:focus){
+		border-left-width: 0;
 	}
 	& > *:first-child{
 		border-radius: 3px 0 0 3px;
@@ -265,6 +378,10 @@ select.#{$prefix}form_input.#{$prefix}form_input{
 		background-color: change_lightness($color_bg, 5);
 	}
 
+	.#{$prefix}form#{$name} .#{$prefix}form_input::placeholder{
+		color: rgba($color_text, 0.3);
+	}
+
 	.#{$prefix}form#{$name} .#{$prefix}form_input,
 	.#{$prefix}form#{$name}.#{$prefix}form_input,
 	.#{$prefix}form#{$name} .#{$prefix}form_input[type="checkbox"] + span,
@@ -297,6 +414,72 @@ select.#{$prefix}form_input.#{$prefix}form_input{
 		color: rgba($color_text, 0.6);
 	}
 
+
+
+	.#{$prefix}form#{$name} .#{$prefix}form_input[type='range'],
+	.#{$prefix}form#{$name}.#{$prefix}form_input[type='range']{
+		&::-webkit-slider-runnable-track{
+			border: 1px solid $color_border;
+			background: $color_bg;
+		}
+		&::-webkit-slider-thumb{
+			border: 1px solid $color_border;
+			background: $color_bg;
+		}
+		&:focus::-webkit-slider-thumb{
+			border: 1px solid $color_text;
+		}
+		&[disabled]::-webkit-slider-runnable-track{
+			background: rgba($color_border, 0.6);
+		}
+		&[disabled]::-webkit-slider-thumb{
+			background: rgba($color_border, 0.6);
+		}
+		&::-moz-range-track{
+			border: 1px solid $color_border;
+			background: $color_bg;
+		}
+		&::-moz-range-thumb{
+			border: 1px solid $color_border;
+			background: $color_bg;
+		}
+		&:focus::-moz-range-thumb{
+			border: 1px solid $color_text;
+		}
+		&[disabled]::-moz-range-track{
+			background: rgba($color_border, 0.6);
+		}
+		&[disabled]::-moz-range-thumb{
+			background: rgba($color_border, 0.6);
+		}
+		&::-ms-fill-lower{
+			border: 1px solid $color_border;
+			background: $color_bg;
+		}
+		&::-ms-fill-upper{
+			border: 1px solid $color_border;
+			background: $color_bg;
+		}
+		&::-ms-thumb{
+			border: 1px solid $color_border;
+			background: $color_bg;
+		}
+		&:focus::-ms-thumb{
+			border: 1px solid $color_border;
+			background: $color_bg;
+		}
+		&[disabled]::-ms-fill-lower{
+			background: rgba($color_border, 0.6);
+		}
+		&[disabled]::-ms-fill-upper{
+			background: rgba($color_border, 0.6);
+		}
+		&[disabled]::-ms-thumb{
+			background: rgba($color_border, 0.6);
+		}
+	}
+	
+	
 	//.#{$prefix}form_input.#{$prefix}form#{$name}:focus,
 	//.#{$prefix}form_input.#{$prefix}form#{$name}:focus,
 	//.#{$prefix}form_input.#{$prefix}form#{$name}[type="checkbox"]:focus+*,
@@ -410,7 +593,7 @@ body > [class*="#{$prefix}loader"]{
 /*########################################
          USE
 ########################################*/
-[class="demo1"]{
+.demo1{
 color: #333;
 
 //button
