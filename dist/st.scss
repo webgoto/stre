@@ -25,9 +25,6 @@ $prefix: "st_";
 		background: $color_bg;
 		border: 1px solid $color_bg;
 	}
-	.#{$prefix}btn#{$name}:hover:not([disabled]){
-		background: change_lightness($color_bg, 4%);
-	}
 	.#{$prefix}btn#{$name}.#{$prefix}btn_rich{
 		border-color: darken($color_bg, 4%);
 		text-shadow:0 1px 0 darken($color_bg, 2%);
@@ -36,17 +33,22 @@ $prefix: "st_";
 		top: -3px;
 		box-shadow: 0 3px darken($color_bg, 8%);
 	}
-	.#{$prefix}btn#{$name}.#{$prefix}btn_depth:hover:not([disabled]){
-		background: $color_bg;
-		top: -2px;
-		box-shadow: 0 2px darken($color_bg, 8%);
-	}
 	.#{$prefix}btn#{$name}[class*="#{$prefix}btn_line"]{
 		color: $color_bg;
 	}
-	.#{$prefix}btn#{$name}[class*="#{$prefix}btn_line"]:hover:not([disabled]){
-		background: $color_bg;
-		color: $color_text;
+	@media(hover: hover){
+		.#{$prefix}btn#{$name}:hover:not([disabled]){
+			background: change_lightness($color_bg, 4%);
+		}
+		.#{$prefix}btn#{$name}.#{$prefix}btn_depth:hover:not([disabled]){
+			background: $color_bg;
+			top: -2px;
+			box-shadow: 0 2px darken($color_bg, 8%);
+		}
+		.#{$prefix}btn#{$name}[class*="#{$prefix}btn_line"]:hover:not([disabled]){
+			background: $color_bg;
+			color: $color_text;
+		}
 	}
 }
 
@@ -99,9 +101,11 @@ $prefix: "st_";
 	right: 0;
 	bottom: 0;
 }
-.#{$prefix}btn_depth:hover:before{
-	top: -1px;
-	bottom: 1px;
+@media(hover: hover){
+	.#{$prefix}btn_depth:hover:before{
+		top: -1px;
+		bottom: 1px;
+	}
 }
 .#{$prefix}btn_depth:active:before{
 	top: -3px;
@@ -110,9 +114,7 @@ $prefix: "st_";
 .#{$prefix}btn_round:before{
 	border-radius: 4px;
 }
-.#{$prefix}btn_round:before{
-	border-radius: 4px;
-}
+
 .#{$prefix}btn_oval:before{
 	border-radius: 999px;
 }
@@ -330,6 +332,10 @@ select.#{$prefix}form_input.#{$prefix}form_input{
 	line-height: 34px;
 	padding: 0 8px;
 	font-size: 14px;
+	margin-left: -1px;
+	&:not(:first-child){
+		margin-left: -1px;
+	}
 }
 
 .#{$prefix}form_group{
@@ -337,10 +343,12 @@ select.#{$prefix}form_input.#{$prefix}form_input{
 	& > .#{$prefix}form_input{
 		border-radius: 0px;
 		flex: 1;
+		margin-left: -1px;
+		position: relative;
 	}
-	& > [class*="#{$prefix}form_"]:not(:first-child):not(:focus){
-		border-left-width: 0;
-	}
+	//& > [class*="#{$prefix}form_"]:not(:first-child):not(:first-child){
+	//	border-left-width: 0;
+	//}
 	& > *:first-child{
 		border-radius: 3px 0 0 3px;
 	}
@@ -352,6 +360,7 @@ select.#{$prefix}form_input.#{$prefix}form_input{
 :root:root .#{$prefix}form_input:focus{
 	outline: 0;
 	border-color: currentColor;
+	z-index: 1;
 }
 
 .#{$prefix}form_sm .#{$prefix}form_addon,
@@ -393,8 +402,9 @@ select.#{$prefix}form_input.#{$prefix}form_input{
 		background-color: $color_bg;
 	}
 
-	.#{$prefix}form#{$name} select.#{$prefix}form_input{
-		background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj48c3ZnIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCA3IDUiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgc3R5bGU9ImZpbGwtcnVsZTpldmVub2RkO2NsaXAtcnVsZTpldmVub2RkOyI+PHBhdGggZD0iTTYuMzUyLDAuNzY5bC0yLjk3NywzLjMzOWwtMi45NzcsLTMuMzM5IiBzdHlsZT0iZmlsbDpub25lO3N0cm9rZTojMDAwO3N0cm9rZS13aWR0aDoxcHg7Ii8+PC9zdmc+');
+	.#{$prefix}form#{$name} select.#{$prefix}form_input,
+	select.#{$prefix}form#{$name}.#{$prefix}form_input{
+		background-image: url('data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNyA1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbDpzcGFjZT0icHJlc2VydmUiIHN0eWxlPSJmaWxsLXJ1bGU6ZXZlbm9kZDtjbGlwLXJ1bGU6ZXZlbm9kZCI+PHBhdGggZD0iTTYuMzUyLjc2OSAzLjM3NSA0LjEwOC4zOTguNzY5IiBzdHlsZT0iZmlsbDpub25lO3N0cm9rZTojMDAwO3N0cm9rZS13aWR0aDoxcHgiLz48L3N2Zz4=');
 	}
 
 	.#{$prefix}form#{$name} .#{$prefix}form_input[disabled],
@@ -413,7 +423,6 @@ select.#{$prefix}form_input.#{$prefix}form_input{
 		background-color: change_lightness($color_bg, 10);
 		color: rgba($color_text, 0.6);
 	}
-
 
 
 	.#{$prefix}form#{$name} .#{$prefix}form_input[type='range'],
@@ -497,6 +506,7 @@ select.#{$prefix}form_input.#{$prefix}form_input{
 ========================================*/
 [class*="#{$prefix}table"]{
 	width: 100%;
+	//border-collapse: collapse;
 	border-collapse: separate;
 	border-spacing: 0;
 	empty-cells: show;
@@ -505,33 +515,71 @@ select.#{$prefix}form_input.#{$prefix}form_input{
 		padding: 1em 0;
 		text-align: center;
 	}
-	tr>*{
-		padding: 0.8em 0em 0.8em 1.1em;
+	tr *{
+		padding: 0.8em 0.7em;
 		overflow: visible;
 	}
 }
-@mixin make_table($name, $th_color, $th_bgcolor, $td_bgcolor, $radius) {
-	table.#{$prefix}table#{$name}{
-		border-radius: $radius;
-		& > *:first-child  > tr:first-child > *:first-child{
-			border-radius: $radius 0 0 0;
+.#{$prefix}table_round{
+	$table_radius: 5px;
+	border-radius: $table_radius;
+	& > *:not(tbody):not(tfoot):not(caption):first-of-type > tr:first-child > *:first-child,
+	& > tbody:first-child > tr:first-child > *:first-child,
+	& > caption + tbody > tr:first-child > *:first-child{
+		border-top-left-radius: $table_radius;
+	}
+	& > *:not(tbody):not(tfoot):not(caption):first-of-type > tr:first-child > *:last-child,
+	& > tbody:first-child > tr:first-child > *:last-child,
+	& > caption + tbody > tr:first-child > *:last-child{
+		border-top-right-radius: $table_radius;
+	}
+	& > :last-child > tr:last-child > *:first-child{
+		border-bottom-left-radius: $table_radius;
+	}
+	& > :last-child > tr:last-child > *:last-child{
+		border-bottom-right-radius: $table_radius;
+	}
+}
+@mixin make_table($name, $th_color, $th_bg_color, $border_color, $radius) {
+
+	.#{$prefix}table#{$name}:not(.#{$prefix}table_borderless){
+		border: 0 solid rgba($border_color, 0.15);
+		tr *{
+			border: 0 solid rgba($border_color, 0.15);
+			border-bottom-width: 1px;
 		}
-		& > *:first-child > tr:first-child > *:last-child{
-			border-radius: 0 $radius 0 0;
+		thead + tbody tr:first-child *{
+				border-top: 2px solid $border_color;
 		}
-		& > *:last-child:not(caption) > tr:last-child > *:first-child{
-			border-radius: 0 0 0 $radius;
+		tfoot{
+			tr *{
+				border-top: 2px solid $border_color;
+				border-bottom-width: 0;
+			}
 		}
-		& > *:last-child:not(caption) > tr:last-child > *:last-child{
-			border-radius: 0 0 $radius 0;
+		tbody:not(*:last-child){
+			tr:last-child * {
+				border-bottom-width: 0px;
+			}
 		}
-		tr:nth-child(2n+1){
-			background: $td_bgcolor;
+	}
+
+	.#{$prefix}table_stripe{
+		tbody tr:nth-child(2n+1){
+			background-color: rgba($border_color, 0.05);
 		}
-		th{
-			color: $th_color;
-			background-color: $th_bgcolor;
+	}
+	table.#{$prefix}table_border[class]{
+		border-top-width: 1px;
+		border-right-width: 1px;
+		tr *{
+			border-bottom-width: 1px;
+			border-left-width: 1px;
 		}
+	}
+	table[class].#{$prefix}table#{$name} .#{$prefix}table_invert{
+		color: $th_color;
+		background-color: $th_bg_color;
 	}
 }
 
@@ -550,23 +598,39 @@ select.#{$prefix}form_input.#{$prefix}form_input{
 	justify-content: center;
 	align-items: center;
 	align-content: center;
-	font-size: 12px;
 	&:before{
 		display: block;
 		content: ' ';
 		width: 40px;
 		height: 40px;
 		border-radius: 50%;
-		animation: loader .6s linear;
+		animation: stre_loader .6s linear;
 		animation-iteration-count: infinite;
 	}
 	&:after{
 		display: block;
 		margin-top: 7px;
+		font-size: 12px;
 	}
 }
 body > [class*="#{$prefix}loader"]{
 	position: fixed;
+}
+.#{$prefix}loader_inline{
+	position: relative;
+	top: 0.2em;
+	bottom: auto;
+	display: inline-block;
+	//width: 0;
+	&:before{
+		width: 1em;
+		height: 1em;
+		border: 0.15em solid currentColor;
+		border-bottom-color: transparent;
+	}
+	&:after{
+		content: none;
+	}
 }
 @mixin make_loader($name, $color_circle, $color_bg, $opacity ,$text) {
 	.#{$prefix}loader#{$name}{
@@ -581,7 +645,7 @@ body > [class*="#{$prefix}loader"]{
 		content: $text;
 	}
 }
-@keyframes loader{
+@keyframes stre_loader{
 	from{
 		transform:rotate(0deg);
 	}
@@ -601,7 +665,7 @@ color: #333;
 //form
 @include make_form('', #333, #bbb, #fff);
 //table
-@include make_table('', #fff, #666, #eee, 0px);
+@include make_table('', #fff, #666, #333, 5px);
 //loader
 @include make_loader('', #fff, #000, 0.8, 'Loading');
 }
@@ -616,9 +680,9 @@ background-color: #FFF8E1;
 //@include make_button('_1', #fff, #00BFA5);
 //@include make_button('_1', #fff, #D84315);
 //form
-@include make_form('', #d64637, #d64637, #ffd6c3);
+@include make_form('', #d64637, #ea9f8c, #ffd6c3);
 //table
-@include make_table('', #d64637, #ffd6c3, #fff, 0px);
+@include make_table('', #d64637, #ffb390, #d64637, 0px);
 //loader
 @include make_loader('', #d64637, #ffd6c3, 0.8, 'Loading');
 }
@@ -631,7 +695,7 @@ background-color: #444;
 //form
 @include make_form('', #fff, #999, #555);
 //table
-@include make_table('', #fff, #00BFA5, #555, 0px);
+@include make_table('', #fff, #00BFA5, #fff, 0px);
 //loader
 @include make_loader('', #00BFA5, #ccc, 0.8, 'Loading');
 }
